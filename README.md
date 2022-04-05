@@ -1,2 +1,2 @@
-WEB-приложение для художников  
-https://www.baeldung.com/spring-response-entity
+Тема: WEB-приложение для художников  
+Инфа про ResponseEntity: https://www.baeldung.com/spring-response-entity
