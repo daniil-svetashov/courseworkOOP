@@ -1,4 +1,3 @@
-/*
 
 package ua.edu.op.webapplication;
 
@@ -40,14 +39,14 @@ public class TestController {
 
     //http://localhost:8080/register?userId&login&password&phone
     //@PostMapping(value = "/register")
-*/
+
 /*    public void register(
             @RequestParam(value = "userId") int userId,
             @RequestParam(value = "login") String login,
             @RequestParam(value = "password") String password,
             @RequestParam(value = "phone") String phone) {
         System.out.println(" " + userId + " " + login + " " + password + " " + phone);
-    }*//*
+    }*/
 
 }
-*/
+

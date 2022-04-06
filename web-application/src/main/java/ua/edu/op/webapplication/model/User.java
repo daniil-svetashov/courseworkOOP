@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_info")//Если name = "user" , то выдает ошибку
 @Data
 public class User {
 
