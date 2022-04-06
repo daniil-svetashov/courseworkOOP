@@ -1,3 +1,4 @@
+/*
 package ua.edu.op.webapplication;
 
 public class User {
@@ -65,4 +66,4 @@ public class User {
                 ", phone='" + phone + '\'' +
                 '}';
     }
-}
+}*/
