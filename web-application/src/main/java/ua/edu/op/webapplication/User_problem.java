@@ -1,6 +1,6 @@
 package ua.edu.op.webapplication;
 
-public class User {
+public class User_problem {
 
     private long userId;
     private String login;
@@ -8,7 +8,7 @@ public class User {
     private String password;
     private String phone;
 
-    public User(long userId, String login, String mail, String password, String phone) {
+    public User_problem(long userId, String login, String mail, String password, String phone) {
         this.userId = userId;
         this.login = login;
         this.mail = mail;
