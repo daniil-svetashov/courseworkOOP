@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
@@ -21,14 +22,11 @@ public class FeedbackController {
     }
 
 
+    @PostMapping("/")
+    public String processForm(@Valid @ModelAttribute("new_feedback") Feedback feedback, BindingResult result) {
 
-   @PostMapping("/")
-    public String processForm(@Valid Feedback feedback, BindingResult result)
-    {
-
-        if(result.hasErrors())
-        {
-            return "index";//?
+        if (result.hasErrors()) {
+            return "index";
         }
 
         Date date = new Date();
@@ -38,8 +36,7 @@ public class FeedbackController {
     }
 
     @GetMapping("/")
-    public String index(Model model)
-    {
+    public String index(Model model) {
         model.addAttribute("new_feedback", new Feedback());
         return "index";
     }

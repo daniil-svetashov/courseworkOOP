@@ -16,7 +16,7 @@ public class Feedback {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long feedbackId;
 
-    @Size(min=2, max=255, message="feedback should be from 2 to 255 characters")
+    @Size(min=2, max=255, message="Комментарий должен содержать от 2х до 255 символов")
     private String userFeedback;
 
 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Новости</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{~/css/style.css}">
+    <link href="https://fonts.googleapis.com/css?
+	family=Amatic+SC|Montserrat:400,700&amp;subset=cyrillic-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+          integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+          crossorigin="anonymous">
+    <link rel="icon" th:href="@{~/images/stone-icon.png}" type="images/png">
+
+</head>
+<body>
+
+<div class="back">
+    <div class="fannav">
+        <a class="active" th:href="@{~/}">На Главную</a>
+        <a th:href="@{fanats}">Фанаты</a>
+        <a th:href="@{history}">История</a>
+        <a th:href="@{filmography}">Фильмография</a>
+    </div>
+</div>
+
+<div class="newsheader">
+    <h1>НОВОСТИ</h1>
+</div>
+
+<button onclick="topFunction()" id="histbtn" title="В начало">Наверх</button>
+
+<div class="row">
+    <div class="side">
+        <h2 class="side_title">Главные</h2>
+
+        <h1 class="side_top_text">Хаяо Миядзаки снимет последний фильм для Гибли</h1>
+        <img class="img6" th:src="@{~/images/news/miadz.jpg}" alt="">
+        <p class="side_bott_text">Хаяо Миядзаки выйдет с пенсии, чтобы снять последний
+            полнометражный мультфильм для Гибли. Мультфильм основан на книге Гендзабуро Есино
+            1937 года «Как поживаешь?».
+            <a href="https://daily.afisha.ru/news/amp/57276/">[...]</a>
+        </p>
+
+        <h1 class="side_top_text">В ноябре 2022 года откроется «Парк Гибли» в Айти</h1>
+        <img class="img6" th:src="@{~/images/news/park.JPG}" alt="">
+        <p class="side_bott_text">1 ноября 2022 года в мемориальном парке Айти Экспо в городе Нагакутэ
+        откроется тематический парк «Гибли». Это совместный проект префектуры Айти и Studio
+        Ghibli. Часть строительной площадки уже открыта.
+        <a href="https://www.nippon.com/ru/guide-to-japan/gu900209/amp/">[...]</a>
+        </p>
+
+
+    </div>
+    <div class="main">
+
+        <h2 class="side_title">Последние</h2>
+
+        <div class="pic">
+            <img class="img5" th:src="@{~/images/news/totoroo.jpg}" alt="">
+            <div>
+                <h1 class="top_text">В лондонском театре покажут "Тоторо" </h1>
+                <p class="bott_text">Королевская шекспировская труппа (RSC) из Великобритании объявила,
+                    что премьера спектакля по фильму «Мой сосед Тоторо» Хаяо Миядзаки состоится 8 октября в
+                    Лондонском центре искусств Барбикан. К производственной труппе присоединился композитор фильма,
+                    Дзё Хисаиси.
+                    <a href="https://www.nippon.com/ru/news/yjj2022042701206/amp/">[...]</a>
+                </p>
+                <p class="bott2">28 апреля 2022</p>
+            </div>
+        </div>
+
+        <div class="pic">
+            <img class="img5" th:src="@{~/images/news/maih.jpg}" alt="">
+            <div>
+                <h1 class="top_text">Дзё Хисаиси: тур по Европе 2022 в Париже и Лондоне</h1>
+                <p class="bott_text">Из-за пандемии COVID-19 Джо Дзё Хисаиси пришлось отменить
+                и отложить многие из своих концертных дат в 2020 и 2021 годах. Теперь композитор
+                ожидается на четырех встречах во Франции в мае 2022 года.
+                    <a href="https://www.ghibliworld.de/index.php/joe-hisaishi-europa-tour-2022-in-strassburg-und-london/">[...]</a>
+                </p>
+                <p class="bott2">4 марта 2022</p>
+            </div>
+        </div>
+
+        <div class="pic">
+            <img class="img5" th:src="@{~/images/news/park.JPG}" alt="">
+            <div>
+                <h1 class="top_text">В ноябре 2022 года откроется «Парк Гибли» в Айти</h1>
+                <p class="bott_text">1 ноября 2022 года в мемориальном парке Айти Экспо в городе Нагакутэ
+                    откроется тематический парк «Гибли». Это совместный проект префектуры Айти и Studio
+                    Ghibli. Часть строительной площадки уже открыта.
+                    <a href="https://www.nippon.com/ru/guide-to-japan/gu900209/amp/">[...]</a>
+                </p>
+                <p class="bott2">2 февраля 2022</p>
+            </div>
+        </div>
+
+        <div class="pic">
+            <img class="img5" th:src="@{~/images/news/miadz.jpg}" alt="">
+            <div>
+                <h1 class="top_text">Хаяо Миядзаки снимет последний фильм для Гибли</h1>
+                <p class="bott_text">Хаяо Миядзаки выйдет с пенсии, чтобы снять последний
+                    полнометражный мультфильм для Гибли. Мультфильм основан на книге Гендзабуро Есино
+                    1937 года «Как поживаешь?».
+                    <a href="https://daily.afisha.ru/news/amp/57276/">[...]</a>
+                </p>
+                <p class="bott2">25 ноября 2021</p>
+            </div>
+        </div>
+
+        <div class="pic">
+            <img class="img5" th:src="@{~/images/news/museum.jpg}" alt="">
+            <div>
+                <h1 class="top_text">Новый спонсор музея Гибли</h1>
+                <p class="bott_text">В ознаменование длительного сотрудничества с Музеем Гибли
+                    компания "Loewe Foundation" объявила о трехлетнем спонсорстве с оператором Музея
+                    Мемориального культурного фонда Токума. Компании разделяют многие
+                    ценности, преданность ремеслу и привязанность к природе.
+                    <a href="https://www.ghibliworld.de/index.php/ghibli-museum-wird-vom-neuen-sponsor-unterstuetzt/">[...]</a>
+                </p>
+                <p class="bott2">1 ноября 2021</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="copyright">
+            © 2022 by Natalia Bodiul
+        </div>
+    </div> <!-- container -->
+</footer>
+
+
+<script>
+    var mybutton = document.getElementById("histbtn");
+
+    // Показать кнопку, пролистав
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // При нажатии на кнопку, вернуться в начало страницы
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</body>
+</html>

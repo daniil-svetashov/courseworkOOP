@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Вход</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{~/css/sign.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?
+	family=Amatic+SC|Montserrat:400,700&amp;subset=cyrillic-ext"
+        rel="stylesheet">
+  <link rel="icon" th:href="@{~/images/stone-icon.png}" type="images/png">
+
+</head>
+<body>
+
+<div class="histnav">
+  <a class="active" th:href="@{~/}">На Главную</a>
+  <a th:href="@{~/fanats}">Фанаты</a>
+</div>
+
+<div class="container" id="container">
+  <div class="form-container log-in-container">
+    <form action="fanats.html">
+      <h1>Вход</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+        <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></i></a>
+      </div>
+      <span>или используйте свой аккаунт</span>
+      <input type="email" placeholder="Почта" />
+      <input type="password" placeholder="Пароль" />
+      <a href="#">Забыли свой пароль?</a>
+      <button>Войти</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-right">
+        <h1>У вас ещё нет аккаунта?</h1>
+        <p>Зарегестрируйтесь, перейдя по кнопке</p>
+        <a th:href="@{~/signup}" class="button2">Зарегестрироваться</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
