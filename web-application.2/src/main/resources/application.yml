@@ -11,7 +11,7 @@ spring:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/webapp
     username: webapp_user
-    password: 6365
+    password:
     driverClassName: org.postgresql.Driver
 
 
