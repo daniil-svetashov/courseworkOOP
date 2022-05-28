@@ -28,9 +28,6 @@ public class FeedbackController {
         if (result.hasErrors()) {
             return "index";
         }
-
-        Date date = new Date();
-        feedback.setDate(date);
         service.addFeedback(feedback);
         return "redirect:/";
     }

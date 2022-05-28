@@ -1,0 +1,36 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Новости</h1>
+
+
+<div th:each="news :${list_news}">
+    <span th:text="${news.title}"/>
+    <span th:text="${news.text}"/>
+    <span th:text="${news.link}"/>
+    <span th:text="${news.date}"/>
+    <!-- <img th:src="@{/images/${news.image.getImageId()}}" alt=""> -->
+
+   <!-- <a th:href="@{/category/edit/{id}(id=${category.idCategory})}">view</a> -->
+
+    <img th:src="@{/images/{id}(id=${news.image.getImageId()})}" height="60px"/>
+</div>
+
+<!--<tbody>
+<tr th:each="news :${list_news}">
+    <span> </span>
+    <td><span th:text="${news.title}"/></td><br>
+    <td><span th:text="${news.text}"/></td><br>
+    <td><span th:text="${news.link}"/></td><br>
+    <td><span th:text="${news.date}"/></td><br>
+    <td><img th:href="@{~/images/${news.image.getImageId()}}" alt=""></td>
+</tr>
+</tbody>-->
+
+</body>
+</html>

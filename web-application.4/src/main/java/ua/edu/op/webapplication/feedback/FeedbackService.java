@@ -3,6 +3,8 @@ package ua.edu.op.webapplication.feedback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 
 @Service
 public class FeedbackService {
@@ -16,6 +18,8 @@ public class FeedbackService {
 
     public void addFeedback (Feedback feedback)
     {
+        Date date = new Date();
+        feedback.setDate(date);
         feedbackRepository.saveAndFlush(feedback);
     }
 
