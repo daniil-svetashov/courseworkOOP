@@ -2,20 +2,26 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{~/css/style.css}">
     <title>Title</title>
 </head>
 <body>
 <h1>Добавление Новостей</h1>
 
 <div>
-    <form method="POST" enctype="multipart/form-data" th:action="@{~/news_temp/add_news}" th:object="${new_news}">
-        <input th:field="*{title}" type="text" name="title" placeholder="Заголовок"><br>
-        <input th:field="*{text}" type="text" name="text" placeholder="Текст"><br>
-        <input th:field="*{link}" type="text" name="link" placeholder="Ссылка"><br>
-        <input th:field="*{date}" type="text" name="date" placeholder="Дата"><br>
+    <form method="POST" enctype="multipart/form-data" th:action="@{~/news/add_news}" th:object="${new_news}">
+        <input th:field="*{title}" type="text" name="title" placeholder="Заголовок"><
+        <small class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"/>
+        <input th:field="*{text}" type="text" name="text" placeholder="Текст">
+        <small class="text-danger" th:if="${#fields.hasErrors('text')}" th:errors="*{text}"/>
+        <input th:field="*{link}" type="text" name="link" placeholder="Ссылка">
+        <small class="text-danger" th:if="${#fields.hasErrors('link')}" th:errors="*{link}"/>
+        <input th:field="*{date}" type="text" name="date" placeholder="Дата">
+        <small class="text-danger" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"/>
         <input type="file" name="file">
         <input type="submit" value="Добавить новость">
     </form>
+
 </div>
 
 

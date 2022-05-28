@@ -1,5 +1,5 @@
 <!DOCTYPE html >
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -18,7 +18,7 @@
 
    <!-- <a th:href="@{/category/edit/{id}(id=${category.idCategory})}">view</a> -->
 
-    <img th:src="@{/images/{id}(id=${news.image.getImageId()})}" height="60px"/>
+    <img th:src="@{/image/{id}(id=${news.image.getImageId()})}" height="60px" alt=""/>
 </div>
 
 <!--<tbody>

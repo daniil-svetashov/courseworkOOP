@@ -22,6 +22,7 @@ public class NewsService {
         Image image;
         if (file.getSize() != 0) {
             image = toImageEntity(file);
+            //могу ли я так получить название?
             news.addImageToNews(image);
             image.addNewsToImage(news);
         }
@@ -40,7 +41,7 @@ public class NewsService {
         image.setBytes(file.getBytes());
         image.setSize(file.getSize());
         image.setContentType(file.getContentType());
-        image.setOriginalFileName(image.getOriginalFileName());
+        image.setOriginalFileName(file.getOriginalFilename());
         return image;
     }
 }

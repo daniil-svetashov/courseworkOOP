@@ -22,11 +22,6 @@ public class DefaultController {
         return "history";
     }
 
-    @GetMapping("/news")
-    public String news() {
-        return "news";
-    }
-
     @GetMapping("/signin")
     public String signin() {
         return "signin";

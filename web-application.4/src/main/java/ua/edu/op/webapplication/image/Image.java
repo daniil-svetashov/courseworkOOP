@@ -13,17 +13,22 @@ public class Image {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column(name="imageId")
     private long imageId;
 
+    @Column(name="name")
     private String name;
 
+    @Column(name="originalFileName")
     private String originalFileName;
 
+    @Column(name="contentType")
     private String contentType;
 
+    @Column(name="size")
     private Long size;
 
-    @Column(columnDefinition = "BYTEA")
+    @Column(name="bytes", columnDefinition = "BYTEA")
     private byte[] bytes;
 
     @OneToOne(mappedBy = "image")
