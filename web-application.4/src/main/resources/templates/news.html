@@ -65,7 +65,7 @@
                 <p class="bott_text" th:text="${news.text}"/>
                     <a th:href="${news.link}">[...]</a>
                 </p>
-                <p class="bott2" th:text="${news.date}"/>
+                <p class="bott2" th:text="${#dates.format(news.date, 'dd.MM.yyyy')}"/>
             </div>
 
         </div>

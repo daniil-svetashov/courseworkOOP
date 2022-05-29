@@ -39,7 +39,6 @@ public class NewsController {
             throws IOException {
         if(result.hasErrors())
         {
-            System.out.println("WE WERE HERE!");
             return "add_news";
         }
         if(file.isEmpty()) { //проверят, что мы добавили фотку

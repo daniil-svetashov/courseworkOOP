@@ -2,10 +2,14 @@ package ua.edu.op.webapplication.news;
 
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 import ua.edu.op.webapplication.image.Image;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 @Table(name = "news")
@@ -28,11 +32,12 @@ public class News {
     @Column(name="link")
     @Size(min=8, max=255, message="Ссылка должна содержать от 8 до 255 символов")
     private String link;
-    @Column(name="date", columnDefinition = "VARCHAR(20)")
-    @Size(min=2, max=20, message="Дата должна содержать от 2х до 20 символов")
-    private String date;
 
-    public News(long newsId, String title, String text, String link, String date, Image image) {
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Вы должны указать дату")
+    private Date date;
+
+    public News(long newsId, String title, String text, String link, Date date, Image image) {
         this.newsId = newsId;
         this.title = title;
         this.text = text;
