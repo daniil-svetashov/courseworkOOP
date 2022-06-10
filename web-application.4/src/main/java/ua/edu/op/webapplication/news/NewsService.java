@@ -7,6 +7,7 @@ import ua.edu.op.webapplication.image.Image;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -43,5 +44,15 @@ public class NewsService {
         image.setContentType(file.getContentType());
         image.setOriginalFileName(file.getOriginalFilename());
         return image;
+    }
+
+    public void deleteNewsById(long id)
+    {
+        repository.deleteById(id);
+    }
+
+    public Optional<News> getNewsById(long id)
+    {
+       return repository.findById(id);
     }
 }
