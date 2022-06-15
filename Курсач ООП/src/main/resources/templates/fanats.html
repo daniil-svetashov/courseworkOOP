@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Фанаты</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{~/css/style.css}">
+    <link href="https://fonts.googleapis.com/css?
+	family=Amatic+SC|Montserrat:400,700&amp;subset=cyrillic-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+          integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <link rel="icon" th:href="@{~/images/stone-icon.png}" type="images/png">
+
+</head>
+<body>
+
+<div class="fanheader">
+    <h1>ФАНАТЫ</h1>
+    <p>Тесты, арт рисунки</p>
+</div>
+
+<div class="back">
+    <div class="fannav">
+        <a class="active" th:href="@{~/}">На Главную</a>
+        <a th:href="@{~/news}">Новости</a>
+        <a th:href="@{~/history}">История</a>
+        <a th:href="@{~/filmography}">Фильмография</a>
+    </div>
+</div>
+
+<button onclick="topFunction()" id="histbtn" title="В начало">Наверх</button>
+
+<div class="row">
+    <div class="side">
+        <h2 class="side_title">Главные</h2>
+        <h1 class="side_top_text">Хорошо ли вы знакомы с Гибли?</h1>
+        <div class="img1">
+            <a class="fanbtn" href="https://uquiz.com/IrBNBb">Начать тест</a>
+        </div>
+        <p class="side_bott_text">Проверьте, хорошо ли вы помните фильмы данной студии и историю скрывающуюся за ними</p>
+
+        <h1 class="side_top_text">Какой вы персонаж студии Гибли?</h1>
+        <div class="img2">
+            <a class="fanbtn" href="https://www.yesasia.ru/article/558103">Начать тест</a>
+        </div>
+        <p class="side_bott_text">На кого из героев студии Гибли вы больше всего похожи?</p>
+    </div>
+    <div class="main">
+
+        <h2 class="side_title">Арт рисунки</h2>
+
+        <h1 class="side_top_text">Автор: <a href="https://instagram.com/bhisswa?igshid=YmMyMTA2M2Y=">
+            bhisswa </a></h1>
+        <div>
+            <img class="img3" src="" th:src="@{~/images/arts/1.PNG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/2.PNG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/3.PNG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/4.PNG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/5.PNG}" alt="">
+        </div>
+        <p class="side_bott_text">"Шепот серда", "Со склонов Кокурико",
+            "Ходячий замок", "Ветер крепчает"</p>
+
+        <h1 class="side_top_text">Автор: <a href="https://instagram.com/alizakusuma?igshid=YmMyMTA2M2Y=">
+            Aliza Kusuma</a></h1>
+        <div>
+            <img class="img4" src="" th:src="@{~/images/arts/1.1.JPG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/2.1.JPG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/3.1.JPG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/4.1.JPG}" alt="">
+        </div>
+        <p class="side_bott_text">"Шепот серда", "Мой сосед Тоторо",
+            "Унесенные призраками"</p>
+
+        <h1 class="side_top_text">Автор: <a href="https://instagram.com/yuliiatveritina?igshid=YmMyMTA2M2Y=">
+            Julia Tveritina</a></h1>
+        <div>
+            <img class="img3" src="" th:src="@{~/images/arts/cat.JPG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/grave.PNG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/howl.PNG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/mononoke.JPG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/nausicaa.PNG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/ponyo.JPG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/spirited.PNG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/totoro.JPG}" alt="">
+            <img class="img3" src="" th:src="@{~/images/arts/wind.PNG}" alt="">
+
+        </div>
+        <p class="side_bott_text">"Возвращение кота", "Могила светлячков",
+            "Ходячий замок", "Принцесса Мононоке", "Навсикая из долины ветров",
+            "Рыбка Поньо на утесе", "Унесенные призраками", "Мой сосед Тоторо",
+            "Ветер крепчает"</p>
+
+        <h1 class="side_top_text">Автор: <a href="https://instagram.com/portrait_by_nat?igshid=YmMyMTA2M2Y=">
+            Natalia Khlimanenko</a></h1>
+        <div>
+            <img class="img4" src="" th:src="@{~/images/arts/1.2.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/2.2.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/3.2.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/4.2.PNG}" alt="">
+        </div>
+        <p class="side_bott_text">"Принцесса Мононоке", "Ходячий замок",
+            "Унесенные призраками"</p>
+
+        <h1 class="side_top_text">Автор: <a href="https://www.instagram.com/p/CJTAByyjVm9/?igshid=YmMyMTA2M2Y=">
+            Кацуя Кондо</a></h1>
+        <div>
+            <img class="img4" src="" th:src="@{~/images/arts/1.3.JPG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/2.3.JPG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/3.3.JPG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/4.3.JPG}" alt="">
+        </div>
+        <p class="side_bott_text">"Со склонов Кокурико", "Рыбка Поньо на утесе",
+            "Здесь слышен океан", "Небесный замок Лапута"</p>
+
+        <h1 class="side_top_text">Автор: <a href="https://instagram.com/dereklaufman?igshid=YmMyMTA2M2Y=">
+            Derek Laufman</a></h1>
+        <div>
+            <img class="img4" src="" th:src="@{~/images/arts/5.1.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/5.2.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/5.3.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/5.4.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/5.5.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/5.6.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/5.7.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/5.8.PNG}" alt="">
+            <img class="img4" src="" th:src="@{~/images/arts/5.9.JPG}" alt="">
+        </div>
+        <p class="side_bott_text">"Ходячий замок", "Небесный замок Лапута",
+            "Навсикая из долины ветров", "Рыбка Поньо на утесе", "Унесенные призраками",
+            "Порко Россо", "Ведьмина служба доставки", "Принцесса Мононоке"</p>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="copyright">
+            © 2022 by Natalia Bodiul
+        </div>
+    </div> <!-- container -->
+</footer>
+
+
+<script>
+    var mybutton = document.getElementById("histbtn");
+
+    // Показать кнопку, пролистав
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // При нажатии на кнопку, вернуться в начало страницы
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</body>
+</html>

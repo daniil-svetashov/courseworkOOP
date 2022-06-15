@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>История</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{~/css/style.css}">
+    <link href="https://fonts.googleapis.com/css?
+	family=Amatic+SC|Montserrat:400,700&amp;subset=cyrillic-ext"
+          rel="stylesheet">
+    <link rel="icon" th:href="@{~/images/stone-icon.png}" type="images/png">
+
+</head>
+<body>
+
+<div class="back">
+    <div class="histnav">
+        <a class="active" th:href="@{~/}">На Главную</a>
+        <a th:href="@{~/filmography}">Фильмография</a>
+        <a th:href="@{~/fanats}">Фанаты</a>
+    </div>
+
+    <button onclick="topFunction()" id="histbtn" title="В начало">Наверх</button>
+
+    <section class="history">
+        <div class="container">
+            <div class="section_header">
+                <h3 class="history_title">История студии</h3>
+            </div>
+        </div>
+    </section>
+
+<div class="post-wrap">
+    <div class="post-item">
+        <div class="item-content">
+            <div class="item-body">
+                <h3>1982 – 1986 «Навсикая из долины Ветров» и первое появление</h3>
+                <p>Официально первым фильмом "Гибли" является "Небесный замок Лапута", вышедший в 1986 году.
+                    Но фундамент студии был заложен еще во время работы над "Навсикаей из Долины ветров" (1984).
+                    В основу этого фильма полегла одноименная манга за авторством самого Миядзаки. Публиковалась
+                    она на страницах Animage с февраля 1982 года по март 1984. Касса собранная за прокат фильма
+                    позволила открыть известную нам сегодня анимационную студию "Гибли".</p>
+            </div>
+            <div class="item-footer">
+                <a th:href="@{~/filmography}" class="link"><span>Подробнее</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item">
+        <div class="item-content">
+            <div class="item-body">
+                <h3>1988 год «Могила светлячков» и «Мой сосед Тоторо»</h3>
+                <p>В 1988 году "Гибли" выпустила сразу две картины – "Могила светлячкови" и "Мой сосед Тоторо".
+                    Обе определили дальнейшую судьбу студии. Первая получила ряд престижных наград и стала
+                    совершенно уникальной. Фильм очень важен для японской нации и отражает важные для страны вопросы
+                    войны. И вторая картина, благодаря невероятной популярности Тоторо (символ "Гибли"), и
+                    высоким продажам сопутствующих товаров, собрала неплохую кассу.</p>
+            </div>
+            <div class="item-footer">
+                <a th:href="@{~/filmography}" class="link"><span>Подробнее</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item">
+        <div class="item-content">
+            <div class="item-body">
+                <h3>1997 год. Конфликт Ghibli с Miramax</h3>
+                <p>В 1977 году вышла работа "Принцесса Мононоке". К ее прокату привлекли главу Miramax Харви
+                    Вайнштейна, который считал, что для западной аудитории фильм придется изменить. Лента не
+                    получалась "семейной" - в понимании продюсера семьи не захотят сидеть более двух часов в кино.
+                    Но Ghibli была непреклонна. В ответ на предложение сократить фильм продюсер студии Тосио
+                    Судзуки выслал в Miramax катану за подписью «Никаких сокращений» (No cuts).</p>
+            </div>
+            <div class="item-footer">
+                <a th:href="@{~/filmography}" class="link"><span>Подробнее</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item">
+        <div class="item-content">
+            <div class="item-body">
+                <h3>2003 год. Первый «Оскар»</h3>
+                <p>Вплоть до выхода на широкие экраны в 2001 году «Унесенных призраками» на Западе о «Гибли»
+                    и Миядзаки слышали немногие. Все изменилось после того, как в 2003 году эта картина получила
+                    «Оскар» как «Лучший полнометражный анимационный фильм». Среди других престижных наград
+                    «Унесенных призраками» – «Золотой медведь» Берлинского кинофестиваля и четыре «Энни».</p>
+            </div>
+            <div class="item-footer">
+                <a th:href="@{~/filmography}" class="link"><span>Подробнее</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item">
+        <div class="item-content">
+            <div class="item-body">
+                <h3>2003 – 2008 Распространение и награды других работ</h3>
+                <p>После "Унесенных призраками" распространение получили и ранние произведения студии –
+                    "Порко Россо"(1992), "Шепот сердца" (1995), "Принцесса Мононоке" (1997).
+                    Все дальнейшие работы студии быстро лицензировались по всему миру.
+                    "Ходячий замок"(2004) и "Поньо" (2008) получили несколько наград на международных кинофестивалях.</p>
+            </div>
+            <div class="item-footer">
+                <a th:href="@{~/filmography}" class="link"><span>Подробнее</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item">
+        <div class="item-content">
+            <div class="item-body">
+                <h3>2008 год - наше время. "Гибли" и разработка игры</h3>
+                <p>В 2008 году студия приняла участие в
+                    разработке видео игры Ni no Kuni для портативной консолы Nintendo DS.
+                    В настоящее время Studio Ghibli работает над двумя новыми крупными
+                    проектами: полнометражными аниме "Ая и ведьма" от Горо Миядзаки и
+                    "Как имеете?" от Хаяо Миядзаки. Также осенью
+                    2022 года в Японии возле студии откроется свой тематический парк.</p>
+            </div>
+            <div class="item-footer">
+                <a th:href="@{~/filmography}" class="link"><span>Подробнее</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    var mybutton = document.getElementById("histbtn");
+
+    // Показать кнопку, пролистав
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // При нажатии на кнопку, вернуться в начало страницы
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</body>
+</html>
