@@ -1,454 +1,458 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Студия Гибли</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" th:href="@{~/css/style.css}">
-	<link href="https://fonts.googleapis.com/css?
+    <title>Студия Гибли</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{~/css/style.css}">
+    <link href="https://fonts.googleapis.com/css?
 	family=Amatic+SC|Montserrat:400,700&amp;subset=cyrillic-ext"
-	rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
-		  integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
-	<link rel="icon" th:href="@{~/images/stone-icon.png}" type="images/png">
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+          integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <link rel="icon" th:href="@{~/images/stone-icon.png}" type="images/png">
 </head>
 <body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-	$(document).ready(function(){
-		// Добавить плавную прокрутку до всех ссылок
-		$("a").on('click', function(event) {
+    $(document).ready(function () {
+        // Добавить плавную прокрутку до всех ссылок
+        $("a").on('click', function (event) {
 
-			// Убедись в этом что .hash имеет значение перед переопределением поведения по умолчанию
-			if (this.hash !== "") {
-				// Запретить поведение щелчка якоря по умолчанию
-				event.preventDefault();
+            // Убедись в этом что .hash имеет значение перед переопределением поведения по умолчанию
+            if (this.hash !== "") {
+                // Запретить поведение щелчка якоря по умолчанию
+                event.preventDefault();
 
-				// Хранить хэш
-				var hash = this.hash;
+                // Хранить хэш
+                var hash = this.hash;
 
-				// Использование метода animate() jQuery для добавления плавной прокрутки страницы
-				// Необязательное число (800) указывает количество миллисекунд, необходимых для прокрутки до указанной области
-				$('html, body').animate({
-					scrollTop: $(hash).offset().top
-				}, 800, function(){
+                // Использование метода animate() jQuery для добавления плавной прокрутки страницы
+                // Необязательное число (800) указывает количество миллисекунд, необходимых для прокрутки до указанной области
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
 
-					// Добавить хэш (#) для URL-адреса после завершения прокрутки (поведение щелчка по умолчанию)
-					window.location.hash = hash;
-				});
-			} // Конец, если
-		});
-	});
+                    // Добавить хэш (#) для URL-адреса после завершения прокрутки (поведение щелчка по умолчанию)
+                    window.location.hash = hash;
+                });
+            } // Конец, если
+        });
+    });
 </script>
 
 <header class="header">
-	<div class="container">
-		<div class="header_inner">
-			<div class="header_logo">by Natalia Bodiul</div>
-			<nav class="nav">
-				<a class="nav_link" href=#about>О студии</a>
-				<a class="nav_link" th:href="@{~/history}">История</a>
-				<a class="nav_link" th:href="@{~/filmography}">Фильмография</a>
-				<a class="nav_link" th:href="@{~/fanats}">Фанаты</a>
-				<a class="nav_link" th:href="@{~/news}">Новости</a>
-				<a class="nav_link" href=#contacts>Контакты</a>
-				<a class="nav_link" th:href="@{~/signin}">Войти</a>
-			</nav>
-		</div>
-	</div>
+    <div class="container">
+        <div class="header_inner">
+            <div class="header_logo">by Natalia Bodiul</div>
+            <nav class="nav">
+                <a class="nav_link" href=#about>О студии</a>
+                <a class="nav_link" th:href="@{~/history}">История</a>
+                <a class="nav_link" th:href="@{~/filmography}">Фильмография</a>
+                <a class="nav_link" th:href="@{~/fanats}">Фанаты</a>
+                <a class="nav_link" th:href="@{~/news}">Новости</a>
+                <a class="nav_link" href=#contacts>Контакты</a>
+                <a class="nav_link" th:href="@{~/login}">Войти</a>
+            </nav>
+        </div>
+    </div>
 </header>
 
 <div class="intro">
-	<div class="container">
-		<div class="intro_inner">
-			<h1 class="intro_title">Студия Гибли</h1>
-			<h2 class="intro_subtitle">Данный сайт посвящен японской анимационной студии, её истории и фильмографии.
-			Если вам интересно больше узнать о полюбившихся фильмах или основателях студии, добро пожаловать.</h2>
+    <div class="container">
+        <div class="intro_inner">
+            <h1 class="intro_title">Студия Гибли</h1>
+            <h2 class="intro_subtitle">Данный сайт посвящен японской анимационной студии, её истории и фильмографии.
+                Если вам интересно больше узнать о полюбившихся фильмах или основателях студии, добро пожаловать.</h2>
 
-			<a class="btn" href="#allfilms">Узнать больше</a>
-		</div>
-	</div>
+            <a class="btn" href="#allfilms">Узнать больше</a>
+        </div>
+    </div>
 </div>
 
 <button onclick="topFunction()" id="mainbtn" title="В начало">Наверх</button>
 
 <section class="section section_back">
-	<div class="container">
-		<div class="section_header">
-			<h3 class="section_title" id="about">О студии</h3>
-			<div class="section_text">
-				<p>Studio Ghibli (スタジオジブリSutajio Jiburi) — японская анимационная студия , которую критики и многие
-				кинозрители считают одной из лучших анимационных студий в мире на сегодняшний день. Студия наиболее
-				известна своими полнометражными анимационными фильмами. Основана она в 1985 году тремя мужчинами -
-				режиссером и сценаристом Хаяо Миядзаки вместе со своим коллегой и другом Исао Такахатой и продюсером
-				Тосио Судзуки. Студия названа по имени горячего ветра в пустыне Ливии, поскольку основатели хотели,
-				чтобы студия подула новым ветром в индустрии аниме. "Ghibli" в то же время была названием итальянского
-				разведывательного самолета времен Второй мировой войны, поэтому название представляет собой также
-				любовь Хаяо Миядзаки к авиации и Средиземноморью. Символом и логотипом студии стал Тоторо, персонаж
-				из фильма «Мой сосед Тоторо», выпущенный в 1988 году.
-				</p>
-			</div>
-		</div>
+    <div class="container">
+        <div class="section_header">
+            <h3 class="section_title" id="about">О студии</h3>
+            <div class="section_text">
+                <p>Studio Ghibli (スタジオジブリSutajio Jiburi) — японская анимационная студия , которую критики и многие
+                    кинозрители считают одной из лучших анимационных студий в мире на сегодняшний день. Студия наиболее
+                    известна своими полнометражными анимационными фильмами. Основана она в 1985 году тремя мужчинами -
+                    режиссером и сценаристом Хаяо Миядзаки вместе со своим коллегой и другом Исао Такахатой и продюсером
+                    Тосио Судзуки. Студия названа по имени горячего ветра в пустыне Ливии, поскольку основатели хотели,
+                    чтобы студия подула новым ветром в индустрии аниме. "Ghibli" в то же время была названием
+                    итальянского
+                    разведывательного самолета времен Второй мировой войны, поэтому название представляет собой также
+                    любовь Хаяо Миядзаки к авиации и Средиземноморью. Символом и логотипом студии стал Тоторо, персонаж
+                    из фильма «Мой сосед Тоторо», выпущенный в 1988 году.
+                </p>
+            </div>
+        </div>
 
-		<div class="about">
-			<div class="about_item">
-				<div class="about_image">
-					<img src="" th:src="@{~/images/about/1.jpg}" alt="">
-				</div>
-				<div class="about_text">Миядзаки, Такахата и Судзуки</div>
-			</div>
-			<div class="about_item">
-				<div class="about_image">
-					<img src="" th:src="@{~/images/about/2.jpg}" alt="">
-				</div>
-				<div class="about_text">"Ходячий замок" (2004)</div>
-			</div>
-			<div class="about_item">
-				<div class="about_image">
-					<img src="" th:src="@{~/images/about/3.jpg}" alt="">
-				</div>
-				<div class="about_text">Мой сосед Тоторо (рисунок)</div>
-			</div>
-		</div>
-	</div>
+        <div class="about">
+            <div class="about_item">
+                <div class="about_image">
+                    <img src="" th:src="@{~/images/about/1.jpg}" alt="">
+                </div>
+                <div class="about_text">Миядзаки, Такахата и Судзуки</div>
+            </div>
+            <div class="about_item">
+                <div class="about_image">
+                    <img src="" th:src="@{~/images/about/2.jpg}" alt="">
+                </div>
+                <div class="about_text">"Ходячий замок" (2004)</div>
+            </div>
+            <div class="about_item">
+                <div class="about_image">
+                    <img src="" th:src="@{~/images/about/3.jpg}" alt="">
+                </div>
+                <div class="about_text">Мой сосед Тоторо (рисунок)</div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="section allfilms_back">
-	<div class="container">
-		<div class="allfilms_header">
-			<h3 class="section_title" id="allfilms">Все фильмы</h3>
-			<div class="allfilms_text">
-				<p>Для просмотра понравившегося фильма нажмите на соответствующий постер.<br>
-				С детальной информацией можно ознакомиться в разделе "Фильмография", рассположенном
-				в навигационной панеле в начале сайта</p>
-			</div>
+    <div class="container">
+        <div class="allfilms_header">
+            <h3 class="section_title" id="allfilms">Все фильмы</h3>
+            <div class="allfilms_text">
+                <p>Для просмотра понравившегося фильма нажмите на соответствующий постер.<br>
+                    С детальной информацией можно ознакомиться в разделе "Фильмография", рассположенном
+                    в навигационной панеле в начале сайта</p>
+            </div>
 
-			<div class="allfilms">
-				<div class="allfilms_item">
-					<a href="https://rezka.ag/animation/drama/2453-navsikaya-iz-doliny-vetrov.html">
-						<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/nausicaa.jpg}" alt="">
-						<div class="allfilms_icon_text">Смотреть онлайн</div>
-					</a>
-					<h4 class="all_films_title">Навсикая из долины Ветров</h4>
-				</div>
+            <div class="allfilms">
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/2453-navsikaya-iz-doliny-vetrov.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/nausicaa.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Навсикая из долины Ветров</h4>
+                </div>
 
-				<div class="allfilms_item">
-					<a href="https://rezka.ag/animation/adventures/2471-nebesnyy-zamok-laputa-1986.html">
-						<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/castlesky.png}" alt="">
-						<div class="allfilms_icon_text">Смотреть онлайн</div>
-					</a>
-					<h4 class="all_films_title">Небесный замок Лапута</h4>
-				</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/adventures/2471-nebesnyy-zamok-laputa-1986.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/castlesky.png}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Небесный замок Лапута</h4>
+                </div>
 
-				<div class="allfilms_item">
-					<a href="https://rezka.ag/animation/drama/1225-mogila-svetlyachkov-1988.html">
-						<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/grave.jpg}" alt="">
-						<div class="allfilms_icon_text">Смотреть онлайн</div>
-					</a>
-					<h4 class="all_films_title">Могила светлячков</h4>
-				</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/1225-mogila-svetlyachkov-1988.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/grave.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Могила светлячков</h4>
+                </div>
 
-				<div class="allfilms_item">
-					<a href="https://rezka.ag/animation/drama/1347-moy-sosed-totoro.html">
-						<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/totoro.jpg}" alt="">
-						<div class="allfilms_icon_text">Смотреть онлайн</div>
-					</a>
-					<h4 class="all_films_title">Мой сосед Тоторо</h4>
-				</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/1347-moy-sosed-totoro.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/totoro.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Мой сосед Тоторо</h4>
+                </div>
 
-				<div class="allfilms_item">
-					<a href="https://rezka.ag/animation/drama/2470-vedmina-sluzhba-dostavki-1989.html">
-						<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/kiki.jpg}" alt="">
-						<div class="allfilms_icon_text">Смотреть онлайн</div>
-					</a>
-					<h4 class="all_films_title">Ведьмина служба доставки</h4>
-				</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/2470-vedmina-sluzhba-dostavki-1989.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/kiki.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Ведьмина служба доставки</h4>
+                </div>
 
-				<div class="allfilms_item">
-					<a href="https://rezka.ag/animation/drama/2488-esche-vchera-1991.html">
-						<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/yesterday.jpg}" alt="">
-						<div class="allfilms_icon_text">Смотреть онлайн</div>
-					</a>
-					<h4 class="all_films_title">Ещё вчера</h4>
-				</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/2488-esche-vchera-1991.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/yesterday.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Ещё вчера</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/adventures/2468-porko-rosso-1992.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/rosso.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Порко Россо</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/adventures/2468-porko-rosso-1992.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/rosso.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Порко Россо</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/drama/2501-ya-smogu-uslyshat-shum-okeana-1993.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/ocean.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Здесь слышен океан</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/2501-ya-smogu-uslyshat-shum-okeana-1993.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/ocean.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Здесь слышен океан</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/drama/2495-voyna-tanuki-v-periody-heysey-i-pompoko-1994.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/pompoko.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Помпоко: Война тануки</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/2495-voyna-tanuki-v-periody-heysey-i-pompoko-1994.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/pompoko.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Помпоко: Война тануки</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/romance/2984-shepot-serdca-1995.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/whisper.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Шёпот сердца</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/romance/2984-shepot-serdca-1995.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/whisper.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Шёпот сердца</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/drama/1350-princessa-mononoke-1997.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/mononoke.png}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Принцесса Мононоке</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/1350-princessa-mononoke-1997.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/mononoke.png}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Принцесса Мононоке</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/comedy/2493-nashi-sosedi-yamada-1999.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/yamadas.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Мои соседи Ямада</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/comedy/2493-nashi-sosedi-yamada-1999.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/yamadas.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Мои соседи Ямада</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/adventures/829-unesennye-prizrakami-2001.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/spiritedaway.png}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Унесённые призраками</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/adventures/829-unesennye-prizrakami-2001.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/spiritedaway.png}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Унесённые призраками</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/adventures/6333-vozvraschenie-kota-2002.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/catreturns.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Возвращение кота</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/adventures/6333-vozvraschenie-kota-2002.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/catreturns.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Возвращение кота</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/drama/818-hodyachiy-zamok-2004.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/howl.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Ходячий замок</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/818-hodyachiy-zamok-2004.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/howl.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Ходячий замок</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/fantasy/2466-skazaniya-zemnomorya-2006.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/earthsea.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Сказания Земноморья</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/fantasy/2466-skazaniya-zemnomorya-2006.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/earthsea.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Сказания Земноморья</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/adventures/7460-rybka-pono-na-utese-2008.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/ponyo.png}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Рыбка Поньо на утёсе</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/adventures/7460-rybka-pono-na-utese-2008.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/ponyo.png}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Рыбка Поньо на утёсе</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/fantasy/95-arietti-iz-strany-liliputov-2010.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/arrietty.png}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Ариэтти из страны лилипутов</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/fantasy/95-arietti-iz-strany-liliputov-2010.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/arrietty.png}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Ариэтти из страны лилипутов</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/romance/2474-so-sklonov-kokuriko-2011.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/poppyhill.png}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Со склонов Кокурико</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/romance/2474-so-sklonov-kokuriko-2011.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/poppyhill.png}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Со склонов Кокурико</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/drama/1269-veter-krepchaet-2013.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/windrises.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Ветер крепчает</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/1269-veter-krepchaet-2013.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/windrises.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Ветер крепчает</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/drama/10619-skazanie-o-princesse-kaguya-2013.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/kaguya.jpg}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Сказание о принцессе Кагуя</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/10619-skazanie-o-princesse-kaguya-2013.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/kaguya.jpg}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Сказание о принцессе Кагуя</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/drama/12419-vospominaniya-o-marni-2014.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/marnie.png}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Воспоминания о Марни</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/drama/12419-vospominaniya-o-marni-2014.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/marnie.png}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Воспоминания о Марни</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/fantasy/23431-krasnaya-cherepaha-2016.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/redturtle.png}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Красная черепаха</h4>
-					</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/fantasy/23431-krasnaya-cherepaha-2016.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/redturtle.png}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Красная черепаха</h4>
+                </div>
 
-					<div class="allfilms_item">
-						<a href="https://rezka.ag/animation/fantasy/37292-aya-i-vedma-2020.html">
-							<img class="allfilms_icon" src="" th:src="@{~/images/allfilms/earwig.png}" alt="">
-							<div class="allfilms_icon_text">Смотреть онлайн</div>
-						</a>
-						<h4 class="all_films_title">Ая и ведьма</h4>
-					</div>
-				</div>
-		</div>
-	</div>
+                <div class="allfilms_item">
+                    <a href="https://rezka.ag/animation/fantasy/37292-aya-i-vedma-2020.html">
+                        <img class="allfilms_icon" src="" th:src="@{~/images/allfilms/earwig.png}" alt="">
+                        <div class="allfilms_icon_text">Смотреть онлайн</div>
+                    </a>
+                    <h4 class="all_films_title">Ая и ведьма</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="section section_map">
-	<div class="container">
-		<div class="map">
-			<h2 class="map_title">
-				<div>
-					<i class="fas fa-map-marker-alt"></i>
-				</div>
-				<a href="https://goo.gl/maps/87DrJ3NSpeDBXyet5">Музей Гибли</a>
-			</h2>
-		</div>
-	</div>
+    <div class="container">
+        <div class="map">
+            <h2 class="map_title">
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <a href="https://goo.gl/maps/87DrJ3NSpeDBXyet5">Музей Гибли</a>
+            </h2>
+        </div>
+    </div>
 </section>
 
 <script>
-	var mybutton = document.getElementById("mainbtn");
+    var mybutton = document.getElementById("mainbtn");
 
-	// Показать кнопку, пролистав
-	window.onscroll = function() {scrollFunction()};
+    // Показать кнопку, пролистав
+    window.onscroll = function () {
+        scrollFunction()
+    };
 
-	function scrollFunction() {
-		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			mybutton.style.display = "block";
-		} else {
-			mybutton.style.display = "none";
-		}
-	}
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
 
-	// При нажатии на кнопку, вернуться в начало страницы
-	function topFunction() {
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
-	}
+    // При нажатии на кнопку, вернуться в начало страницы
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 </script>
 
 <footer class="footer">
-	<div class="container">
+    <div class="container">
 
-		<div class="footer_inner">
-			<div class="footer_col footer_col_first">
-				<h3 class="footer_logo" id="contacts">Контакты</h3>
-				<div class="footer_text">
-					Автором данного сайта является любительница студии Гибли, которая хотела сделать
-					простой и удобный сайт на русском для тех, кто так же интерисуется этой японской
-					анимационной студией. Очень надеюсь, что данная страница пришлась вам по нраву.
-					Буду признательна за обратную связь. Оставляю вам свои контакты и форму для написания
-					короткого послания.
-				</div>
+        <div class="footer_inner">
+            <div class="footer_col footer_col_first">
+                <h3 class="footer_logo" id="contacts">Контакты</h3>
+                <div class="footer_text">
+                    Автором данного сайта является любительница студии Гибли, которая хотела сделать
+                    простой и удобный сайт на русском для тех, кто так же интерисуется этой японской
+                    анимационной студией. Очень надеюсь, что данная страница пришлась вам по нраву.
+                    Буду признательна за обратную связь. Оставляю вам свои контакты и форму для написания
+                    короткого послания.
+                </div>
 
-				<div class="footer_social">
-					<div class="footer_social_content">
-						Мои соцсети:
-						<a href="mailto:natabodul03@gmail.com" target="_blank">
-							<i class="fa fa-envelope"></i>
-						</a>
-						<a href="https://t.me/moncherien" target="_blank">
-							<i class="fab fa-telegram"></i>
-						</a>
-						<a href="https://www.instagram.com/natbodyul/" target="_blank">
-							<i class="fab fa-instagram"></i>
-						</a>
-						<a href="#" target="_blank">
-							<i class="fab fa-pinterest"></i>
-						</a>
-					</div>
-				</div>
-
-
-				<form class="mail" method="post" enctype="multipart/form-data" th:action="@{~/}" th:object="${new_feedback}">
-					<input th:field="*{userFeedback}" class="mail_input" type="text" name="name" placeholder="Ваш комментарий...">
-					<button class="mail_button" type="submit">Отправить</button>
-					<small class="text-danger" th:if="${#fields.hasErrors('userFeedback')}" th:errors="*{userFeedback}"/>
-				</form>
+                <div class="footer_social">
+                    <div class="footer_social_content">
+                        Мои соцсети:
+                        <a href="mailto:natabodul03@gmail.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a href="https://t.me/moncherien" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://www.instagram.com/natbodyul/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
 
 
-			</div> <!-- footer_col -->
+                <form class="mail" method="post" enctype="multipart/form-data" th:action="@{~/}" th:object="${new_feedback}">
+                    <input th:field="*{userFeedback}" class="mail_input" type="text" name="name" placeholder="Ваш комментарий...">
+                    <button class="mail_button" type="submit">Отправить</button>
+                    <small class="text-danger" th:if="${#fields.hasErrors('userFeedback')}" th:errors="*{userFeedback}"/>
+                </form>
 
-			<div class="footer_col footer_col_second">
-				<div class="footer_title">Студия за работой</div>
-				<div class="frames">
-					<div class="frames_item">
-						<img class="frames_img" src="" th:src="@{~/images/contacts/1.JPG}" alt="">
-						<div class="frames_content">
-							<div>Кропотливость процесса создания анимационных фильмов</div>
-						</div>
-					</div>
-				</div>
 
-				<div class="frames">
-					<div class="frames_item">
-						<img class="frames_img" src="" th:src="@{~/images/contacts/2.PNG}" alt="">
-						<div class="frames_content">
-							<div>Живая театральная адаптация фильма "Унесенные призраками"</div>
-						</div>
-					</div>
-				</div>
+                    </div> <!-- footer_col -->
 
-				<div class="frames">
-					<div class="frames_item">
-						<img class="frames_img" src="" th:src="@{~/images/contacts/3.PNG}" alt="">
-						<div class="frames_content">
-							<div>Тематический парк "Гибли" в Японии. Маскот студии - мой
-								сосед Тоторо</div>
-						</div>
-					</div>
-				</div>
+                    <div class="footer_col footer_col_second">
+                        <div class="footer_title">Студия за работой</div>
+                        <div class="frames">
+                            <div class="frames_item">
+                                <img class="frames_img" src="" th:src="@{~/images/contacts/1.JPG}" alt="">
+                                <div class="frames_content">
+                                    <div>Кропотливость процесса создания анимационных фильмов</div>
+                                </div>
+                            </div>
+                        </div>
 
-			</div>
-			<div class="footer_col footer_col_third">
-				<div class="footer_title">Арт рисунки</div>
-				<div class="arts">
-					<img class="arts_item" src="" th:src="@{~/images/arts/cat.JPG}" alt="">
-					<img class="arts_item" src="" th:src="@{~/images/arts/wind.PNG}" alt="">
-					<img class="arts_item" src="" th:src="@{~/images/arts/howl.PNG}" alt="">
-					<img class="arts_item" src="" th:src="@{~/images/arts/spirited.PNG}" alt="">
-					<img class="arts_item" src="" th:src="@{~/images/arts/nausicaa.PNG}" alt="">
-					<img class="arts_item" src="" th:src="@{~/images/arts/ponyo.JPG}" alt="">
-					<img class="arts_item" src="" th:src="@{~/images/arts/grave.PNG}" alt="">
-					<img class="arts_item" src="" th:src="@{~/images/arts/mononoke.JPG}" alt="">
-					<img class="arts_item" src="" th:src="@{~/images/arts/totoro.JPG}" alt="">
-				</div>
-				<div class="arts_text">Автор: Юлия Тверитина</div>
-			</div>
+                        <div class="frames">
+                            <div class="frames_item">
+                                <img class="frames_img" src="" th:src="@{~/images/contacts/2.PNG}" alt="">
+                                <div class="frames_content">
+                                    <div>Живая театральная адаптация фильма "Унесенные призраками"</div>
+                                </div>
+                            </div>
+                        </div>
 
-		</div> <!-- footer_inner -->
+                        <div class="frames">
+                            <div class="frames_item">
+                                <img class="frames_img" src="" th:src="@{~/images/contacts/3.PNG}" alt="">
+                                <div class="frames_content">
+                                    <div>Тематический парк "Гибли" в Японии. Маскот студии - мой
+                                        сосед Тоторо
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-		<div class="copyright">
-			© 2022 by Natalia Bodiul and Daniil Svetashov
-		</div>
-	</div> <!-- container -->
+                    </div>
+                    <div class="footer_col footer_col_third">
+                        <div class="footer_title">Арт рисунки</div>
+                        <div class="arts">
+                            <img class="arts_item" src="" th:src="@{~/images/arts/cat.JPG}" alt="">
+                            <img class="arts_item" src="" th:src="@{~/images/arts/wind.PNG}" alt="">
+                            <img class="arts_item" src="" th:src="@{~/images/arts/howl.PNG}" alt="">
+                            <img class="arts_item" src="" th:src="@{~/images/arts/spirited.PNG}" alt="">
+                            <img class="arts_item" src="" th:src="@{~/images/arts/nausicaa.PNG}" alt="">
+                            <img class="arts_item" src="" th:src="@{~/images/arts/ponyo.JPG}" alt="">
+                            <img class="arts_item" src="" th:src="@{~/images/arts/grave.PNG}" alt="">
+                            <img class="arts_item" src="" th:src="@{~/images/arts/mononoke.JPG}" alt="">
+                            <img class="arts_item" src="" th:src="@{~/images/arts/totoro.JPG}" alt="">
+                        </div>
+                        <div class="arts_text">Автор: Юлия Тверитина</div>
+                    </div>
+
+                </div> <!-- footer_inner -->
+
+                <div class="copyright">
+                    © 2022 by Natalia Bodiul and Daniil Svetashov
+                </div>
+            </div> <!-- container -->
 </footer>
 
 </body>

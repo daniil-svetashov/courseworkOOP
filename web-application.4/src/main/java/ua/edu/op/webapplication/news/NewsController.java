@@ -37,15 +37,16 @@ public class NewsController {
     }
 
     @PostMapping("/news/add_news")
-    private String addNews(@ModelAttribute("new_news") @Valid News news, BindingResult result, @RequestParam("file") MultipartFile file)
+    private String addNews(@ModelAttribute("new_news")
+                           @Valid News news, BindingResult result,
+                           @RequestParam("file") MultipartFile file)
             throws IOException {
         if (result.hasErrors()) {
             return "add_news";
         }
-        if (file.isEmpty()) { //проверят, что мы добавили фотку
+        if (file.isEmpty()) {
             return "add_news";
         }
-
         service.saveNews(news, file);
         return "redirect:/news";
     }

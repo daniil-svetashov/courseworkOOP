@@ -198,3 +198,7 @@ input {
 .reg2 {
     margin-top: 20px;
 }
+
+.text-danger{
+    color: darkred;
+}
